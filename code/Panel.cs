@@ -20,6 +20,10 @@ public sealed class OpenMenu : Component
 			XGUIRootPanel.Current.AddChild( b );
 			var c = new OptionsThemable();
 			XGUIRootPanel.Current.AddChild( c );
+			var d = new GameLauncher();
+			XGUIRootPanel.Current.AddChild( d );
+			var e = new PlayGamesWindow();
+			XGUIRootPanel.Current.AddChild( e );
 			hi = 10;
 		}
 		else if ( hi < 3 )

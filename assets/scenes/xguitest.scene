@@ -345,11 +345,11 @@
   "LastSaved": "2024-05-28T09:50:30.300216\u002B10:00",
   "ResourceVersion": 1,
   "__references": [
-    "facepunch.beech_bush_regular_small",
-    "facepunch.beech_bush_small",
-    "facepunch.floor_grass_a",
-    "facepunch.floor_grass_dirt_cliff_blend_a",
-    "facepunch.tree_oak_medium_a"
+    "facepunch.beech_bush_regular_small#60665",
+    "facepunch.beech_bush_small#60669",
+    "facepunch.floor_grass_a#18648",
+    "facepunch.floor_grass_dirt_cliff_blend_a#18754",
+    "facepunch.tree_oak_medium_a#33692"
   ],
   "__version": 1
 }
