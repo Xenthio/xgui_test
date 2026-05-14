@@ -1,6 +1,7 @@
 @using Sandbox;
 @using Sandbox.UI;
 @using Sandbox.Razor;
+@using FakeSteam;
 
 @namespace XGUI
 @inherits ListOption
@@ -16,12 +17,17 @@
 
 
 		SetClass("grey", !IsInstalled);
+		if (!FileExists && IsInstalled)
+		{
+			FileSystem.Data.WriteAllText($"installed-game-{Game.FullIdent}", "hello!");
+		}
 	}
 </root>
 
 @code {
 	public Package Game { get; set; }
-	bool IsInstalled => Game.IsMounted();
+	bool IsInstalled => Game.IsMounted() || FileExists;
+	bool FileExists => FileSystem.Data.FileExists($"installed-game-{Game.FullIdent}");
 	bool _installing;
 	public bool Installing
 	{
@@ -60,6 +66,6 @@
 	}
 	protected override int BuildHash()
 	{
-		return System.HashCode.Combine(Game?.FullIdent, Selected);
+		return System.HashCode.Combine(Game?.FullIdent, Selected, Installing, Game?.IsFavourite);
 	}
 }

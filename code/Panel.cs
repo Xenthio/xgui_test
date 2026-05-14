@@ -1,3 +1,4 @@
+using FakeSteam;
 using Sandbox;
 using XGUI;
 
